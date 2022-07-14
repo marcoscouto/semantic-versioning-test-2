@@ -47,4 +47,3 @@ jobs:
 
       - name: Build Gradle
         run: ./gradlew build --no-build-cache
-
