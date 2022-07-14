@@ -35,6 +35,7 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
+
     outputs:
       version: ${{ steps.changelog.outputs.tag }}
 
@@ -55,7 +56,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Show Tag
-        run: echo ${{ needs.release.outputs.tag }}
+        run: echo ${{ needs.release.outputs.version }}
 
       - name: Build
         run: ./gradlew build --no-build-cache
