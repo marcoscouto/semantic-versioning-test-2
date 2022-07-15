@@ -37,7 +37,7 @@ jobs:
         run: echo '${{ toJSON(steps.changelog) }}'
 
     outputs:
-      version: ${{ steps.changelog.outputs.tag }}
+      version: ${{ steps.changelog.outputs.version }}
 
   build:
     needs: release
@@ -55,8 +55,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build
-        run: |
-          chmod +x ./gradlew \
-          echo Building ${{ env.VERSION }} version \
-          ./gradlew build -P version=${{ env.VERSION }} --no-build-cache \
+      - run: chmod +x ./gradlew
+      - run: echo Building ${{ env.VERSION }} version
+      - run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache \
 
