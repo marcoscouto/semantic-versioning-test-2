@@ -1,3 +1,12 @@
+# [3.10.0](https://github.com/marcoscouto/semantic-versioning-test-2/compare/v3.9.0...v3.10.0) (2022-07-15)
+
+
+### Features
+
+* final version ([99170fe](https://github.com/marcoscouto/semantic-versioning-test-2/commit/99170fe236d61a55c8dd16474c0645490a4bb5f6))
+
+
+
 # [3.9.0](https://github.com/marcoscouto/semantic-versioning-test-2/compare/v3.8.0...v3.9.0) (2022-07-15)
 
 
