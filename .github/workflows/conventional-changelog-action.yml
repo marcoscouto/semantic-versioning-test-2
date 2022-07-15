@@ -61,10 +61,7 @@ jobs:
         run: echo Building ${{ env.VERSION }} version
 
       - name: Git Init
-        run: |
-          git init
-          git remote add origin https://github.com/marcoscouto/semantic-versioning-test-2.git
-          git ls-remote --tags --sort="v:refname" origin | tail -n1 | sed 's/.*\///; s/\^{}//'
+        run: git ls-remote --tags --sort="v:refname" origin | tail -n1 | sed 's/.*\///; s/\^{}//'
 
       - name: Build
         run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache
