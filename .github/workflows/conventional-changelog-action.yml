@@ -56,7 +56,7 @@ jobs:
 
       - name: Build
         run: >
-          chmod +x ./gradlew
-          echo Building ${{ env.VERSION }} version
-          ./gradlew build -P version=${{ env.VERSION }} --no-build-cache
+          chmod +x ./gradlew \
+          echo Building ${{ env.VERSION }} version \
+          ./gradlew build -P version=${{ env.VERSION }} --no-build-cache \
 
