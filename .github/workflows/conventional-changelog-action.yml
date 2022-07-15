@@ -55,7 +55,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Show Tag
-        run: echo I'm running on $VERSION
+        run: echo Im running on $VERSION
 
       - name: Build
         run: ./gradlew build --no-build-cache
