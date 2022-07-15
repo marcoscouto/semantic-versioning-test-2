@@ -32,7 +32,6 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
-
     outputs:
       version: ${{ steps.changelog.outputs.tag }}
 
@@ -56,6 +55,9 @@ jobs:
 
       - name: Show Tag
         run: echo Im running on ${{ env.VERSION }}
+
+      - name: Show Tag
+        run: echo '${{ toJSON(needs) }}'
 
       - name: Build
         run: ./gradlew build --no-build-cache
