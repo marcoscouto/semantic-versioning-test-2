@@ -54,15 +54,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: Allow Gradle
-        run: chmod +x ./gradlew
-
-      - name: Show Tag
-        run: echo Im running on ${{ env.VERSION }}
-
-      - name: Show Tag
-        run: echo '${{ toJSON(needs) }}'
-
       - name: Build
-        run: ./gradlew build --no-build-cache
+        run: |
+          chmod +x ./gradlew \
+          echo Building ${{ env.VERSION }} version \
+          ./gradlew build -P version=${{ env.VERSION }} --no-build-cache
 
