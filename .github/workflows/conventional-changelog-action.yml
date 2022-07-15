@@ -56,7 +56,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Show Tag
-        run: echo ${{ needs.release.outputs.version }}
+        run: echo "I'm running on ${{ needs.release.outputs.version }}"
 
       - name: Build
         run: ./gradlew build --no-build-cache
