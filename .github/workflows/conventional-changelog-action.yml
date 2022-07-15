@@ -55,7 +55,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build
-        run: >
+        run: |
           chmod +x ./gradlew \
           echo Building ${{ env.VERSION }} version \
           ./gradlew build -P version=${{ env.VERSION }} --no-build-cache \
