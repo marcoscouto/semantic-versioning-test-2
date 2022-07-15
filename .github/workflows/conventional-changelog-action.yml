@@ -55,7 +55,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Allow Gradle
-      - run: chmod +x ./gradlew
+        run: chmod +x ./gradlew
 
       - name: Version Message
         run: echo Building ${{ env.VERSION }} version
