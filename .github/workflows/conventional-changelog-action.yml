@@ -54,8 +54,12 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: Build
+      - name: Allow Gradle
       - run: chmod +x ./gradlew
-      - run: echo Building ${{ env.VERSION }} version
-      - run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache \
+
+      - name: Version Message
+        run: echo Building ${{ env.VERSION }} version
+
+      - name: Build
+        run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache \
 
