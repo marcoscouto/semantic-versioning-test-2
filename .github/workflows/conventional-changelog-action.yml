@@ -61,5 +61,4 @@ jobs:
         run: echo Building ${{ env.VERSION }} version
 
       - name: Build
-        run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache \
-
+        run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache
