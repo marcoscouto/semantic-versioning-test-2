@@ -60,5 +60,8 @@ jobs:
       - name: Version Message
         run: echo Building ${{ env.VERSION }} version
 
+      - name: Get Previous Tag
+        run: git tag | sort -V | tail -1
+
       - name: Build
         run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache
