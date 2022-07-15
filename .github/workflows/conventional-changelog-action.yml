@@ -60,8 +60,6 @@ jobs:
       - name: Version Message
         run: echo Building ${{ env.VERSION }} version
 
-      - name: Git Init
-        run: git ls-remote --tags --sort="v:refname" origin | tail -n1 | sed 's/.*\///; s/\^{}//'
-
       - name: Build
         run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache
+
