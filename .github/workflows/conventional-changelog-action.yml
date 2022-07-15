@@ -61,9 +61,7 @@ jobs:
         run: echo Building ${{ env.VERSION }} version
 
       - name: Get Previous Tag
-        run: |
-          git ls-remote --tags --sort="v:refname" origin | tail -n1 \
-          git://github.com/git/git.git | tail -n1
+        run: git ls-remote --tags --sort="v:refname" origin | tail -n1 | sed 's/.*\///; s/\^{}//'
 
       - name: Build
         run: ./gradlew build -P version=${{ env.VERSION }} --no-build-cache
